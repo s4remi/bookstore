@@ -1,0 +1,62 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0"
+    />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>book</title>
+
+    <!--  font awesome from cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+    <link rel="stylesheet" href="./css/book_detail.css" />
+  </head>
+  <body>
+    <!--   header section start -->
+    <header class="header">
+      <div class="header-1">
+        <a href="#" class="logo"><i class="fas fa-book"></i> Ali&Zhehao</a>
+        <form action="" class="search-form">
+          <!-- input:search#search-box -->
+          <input
+            type="search"
+            name=""
+            placeholder="search here..."
+            id="search-box"
+          />
+          <label for="search-box" class="fas fa-search"></label>
+        </form>
+        <div class="icons">
+          <div id="search-btn" class="fas fa-search"></div>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-shopping-cart"></a>
+          <div id="login-btn" class="fas fa-user"></div>
+        </div>
+      </div>
+      <!--       navbar starts here-->
+      <div class="header-2">
+        <nav class="navbar">
+          <a href="#home">home</a>
+          <a href="#feature">feature</a>
+          <a href="#arrival">arrival</a>
+          <a href="#reviews">reviews</a>
+          <a href="#blogs">blogs</a>
+        </nav>
+      </div>
+    </header>
+    <!--   header section end -->
+
+    <!--  book detail container starts here-->
+    <div class="book-details-container" id="book-details-container">
+    </div>
+
+    <!--  book detail container ends here-->
+
+    <script src="js/book_detail.js"></script>
+  </body>
+</html>
