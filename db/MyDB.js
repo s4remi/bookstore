@@ -1,9 +1,11 @@
 import { query } from "express";
 import { mongoClient } from "mongodb";
-import * as dotenv from "dotenv";
-dotenv.config();
+//import * as dotenv from "dotenv";
+//dotenv.config();
 
-const client = process.env.Mongo_Url;
+//const client = process.env.Mongo_Url;
+const uri =
+  "Monmongodb+srv://admin:admin@cluster0.duh9gcc.mongodb.net/?retryWrites=true&w=majority";
 const DB_name = "books";
 
 const MyD = () => {
@@ -11,7 +13,7 @@ const MyD = () => {
   const usersCollection = "users";
 
   const connect = () => {
-    const client = new MongoClient(client);
+    const client = new MongoClient(uri);
     const db = client.db("eCommer");
     return { client, db };
   };
