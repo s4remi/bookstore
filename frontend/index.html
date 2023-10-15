@@ -1,0 +1,377 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Ali&Zhehao</title>
+
+    <!-- font swiper bundle -->
+
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+
+    <!--  font awesome from cdn -->
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+    />
+
+    <!--  css file links -->
+    <link rel="stylesheet" href="./css/styles.css" />
+  </head>
+  <body>
+    <!--   header section start -->
+    <header class="header">
+      <div class="header-1">
+        <a href="#" class="logo"><i class="fas fa-book"></i> Ali&Zhehao</a>
+        <form class="search-form" onsubmit="search()">
+          <!-- input:search#search-box -->
+          <input
+            type="search"
+            name=""
+            placeholder="search here..."
+            id="search-box"
+          />
+
+          <button
+            id="test-label"
+            for="search-box"
+            class="fas fa-search"
+          ></button>
+        </form>
+        <div class="icons">
+          <div id="search-btn" class="fas fa-search"></div>
+          <a href="" class="fas fa-heart"></a>
+          <a href="" class="fas fa-shopping-cart"></a>
+          <div id="login-btn" class="fas fa-user"></div>
+        </div>
+      </div>
+      <!--       navbar starts here-->
+      <div class="header-2">
+        <nav class="navbar">
+          <a href="#home">home</a>
+          <a href="#feature">feature</a>
+          <a href="#arrival">arrival</a>
+          <a href="#reviews">reviews</a>
+          <a href="#blogs">blogs</a>
+        </nav>
+      </div>
+    </header>
+    <!--   header section end -->
+
+    <!-- bottom navbar -->
+    <nav class="bottom-navbar">
+      <a href="#home" class="fas fa-home"></a>
+      <a href="#featured" class="fas fa-list"></a>
+      <a href="#arrivals" class="fas fa-tags"></a>
+      <a href="#reviews" class="fas fa-comments"></a>
+      <a href="#blogs" class="fas fa-blog"></a>
+    </nav>
+    <!-- login form -->
+    <div class="login-form-container">
+      <div id="close-login-btn" class="fas fa-times"></div>
+      <form action="">
+        <h3>Sign in</h3>
+        <span>Email</span>
+        <input
+          type="email"
+          name=""
+          class="box"
+          placeholder="enter your email"
+          id="login-email"
+          required
+        />
+        <span>password</span>
+        <input
+          type="password"
+          name=""
+          class="box"
+          placeholder="enter your password"
+          id="login-password"
+          required
+        />
+        <div class="checkbox">
+          <input type="checkbox" name="" id="remember-me" />
+          <label for="remember-me">remember me</label>
+        </div>
+        <input type="submit" value="sign in" class="btn" />
+        <p>forget password? <a href="#" class="">click here</a></p>
+        <p>
+          don't have an account? <a id="sign-up-btn" href="#">create one</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- sign up form -->
+    <div class="sign-up-form-container">
+      <div id="close-sign-up-btn" class="fas fa-times"></div>
+      <form action="">
+        <h3>Sign up</h3>
+        <span>Email</span>
+        <input
+          type="email"
+          name=""
+          required
+          class="box"
+          placeholder="enter your email"
+          id="sign-up-email"
+        />
+        <span>password</span>
+        <input
+          type="password"
+          name=""
+          required
+          minlength="6"
+          class="box"
+          placeholder="enter your password"
+          id="sign-up-password"
+        />
+        <span>Confirm password</span>
+        <input
+          type="password"
+          name=""
+          class="box"
+          placeholder="confirm your password"
+          id="sign-up-confirm-password"
+          data-equal-id="sign-up-password"
+        />
+        <input type="submit" value="sign up" class="btn" />
+        <p>
+          Already have an account?
+          <a id="sign-up-to-login-btn" href="#">Sign in</a>
+        </p>
+      </form>
+    </div>
+
+    <!-- home section starts -->
+
+    <section class="home" id="home">
+      <div class="row">
+        <div class="content">
+          <h3>top selling books</h3>
+          <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Illo enim
+            magnam quos, tempore iusto similique quae dolore architecto expedita
+            reiciendis id praesentium ad, quisquam quo iste modi eligendi dicta?
+            Sapiente.
+          </p>
+          <a href="./booklist.html" class="btn fa-shopping-bag">shop now</a>
+        </div>
+        <div class="swiper books-slider">
+          <div class="swiper-wrapper">
+            <a href="#" class="swiper-slide"
+              ><img src="./images/book-1.png" alt="book 2"
+            /></a>
+            <a href="#" class="swiper-slide"
+              ><img src="./images/book-2.png" alt="book 1"
+            /></a>
+            <a href="#" class="swiper-slide"
+              ><img src="./images/book-3.png" alt="book 3"
+            /></a>
+            <a href="#" class="swiper-slide"
+              ><img src="./images/book-4.png" alt="book 4"
+            /></a>
+            <a href="#" class="swiper-slide"
+              ><img src="./images/book-5.png" alt="book 5"
+            /></a>
+            <a href="#" class="swiper-slide"
+              ><img src="./images/book-6.png" alt="book 6"
+            /></a>
+          </div>
+          <img src="images/stand.png" class="stand" alt="picture stand" />
+        </div>
+      </div>
+    </section>
+    <!-- home section ends -->
+
+    <!-- icon section start -->
+    <section class="icons-container">
+      <div class="icons">
+        <i class="fas fa-plane"></i>
+        <div class="content">
+          <h3>fast shipping</h3>
+          <p>order over $100</p>
+        </div>
+      </div>
+
+      <div class="icons">
+        <i class="fas fa-lock"></i>
+        <div class="content">
+          <h3>secure payment</h3>
+          <p>100 secure payment</p>
+        </div>
+      </div>
+
+      <div class="icons">
+        <i class="fas fa-redo-alt"></i>
+        <div class="content">
+          <h3>easy returns</h3>
+          <p>10 days returns</p>
+        </div>
+      </div>
+
+      <div class="icons">
+        <i class="fas fa-headset"></i>
+        <div class="content">
+          <h3>24/7 support</h3>
+          <p>call us anytime</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- icon section ends -->
+
+    <!-- feature section starts -->
+    <section class="featured" id="featured-books-container">
+      <h1 class="heading"><span>featured books</span></h1>
+      <div class="swiper featured-slider">
+        <div class="swiper-wrapper">
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a
+                id="9780062024039"
+                href="./book_detail.html?isbn=9780062024039"
+                class="fas fa-eye"
+              ></a>
+            </div>
+            <div class="image">
+              <img
+                id="9780062024039 book-details-container"
+                src="./images/divergent.png"
+                alt=""
+              />
+            </div>
+            <div class="content">
+              <h3>featured books</h3>
+              <div class="price">$15.99 <span>$20.99</span></div>
+              <a href="#" class="btn">add to cart</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a
+                href="./book_detail.html?isbn=9999999999999"
+                class="fas fa-eye"
+              ></a>
+            </div>
+            <div class="image">
+              <img id="9999999999999" src="images/dorian-Gra.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>featured books</h3>
+              <div class="price">$15.99 <span>$20.99</span></div>
+              <a href="#" class="btn">add to cart</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a
+                href="./book_detail.html?isbn=9780345538376"
+                class="fas fa-eye"
+              ></a>
+            </div>
+            <div class="image">
+              <img src="images/book-2.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>featured books</h3>
+              <div class="price">$15.99 <span>$20.99</span></div>
+              <a href="#" class="btn">add to cart</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a
+                href="./book_detail.html?isbn=9780439358071"
+                class="fas fa-eye"
+              ></a>
+            </div>
+            <div class="image">
+              <img src="./images/book-1.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>featured books</h3>
+              <div class="price">$15.99 <span>$20.99</span></div>
+              <a href="#" class="btn">add to cart</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a
+                href="./book_detail.html?isbn=9780451526342"
+                class="fas fa-eye"
+              ></a>
+            </div>
+            <div class="image">
+              <img src="images/book-7.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>featured books</h3>
+              <div class="price">$15.99 <span>$20.99</span></div>
+              <a href="#" class="btn">add to cart</a>
+            </div>
+          </div>
+
+          <div class="swiper-slide box">
+            <div class="icons">
+              <a href="#" class="fas fa-search"></a>
+              <a href="#" class="fas fa-heart"></a>
+              <a
+                href="./book_detail.html?isbn=9780393978896"
+                class="fas fa-eye"
+              ></a>
+            </div>
+            <div class="image">
+              <img src="images/book-8.png" alt="" />
+            </div>
+            <div class="content">
+              <h3>featured books</h3>
+              <div class="price">$15.99 <span>$20.99</span></div>
+              <a href="#" class="btn">add to cart</a>
+            </div>
+          </div>
+        </div>
+        <div class="swiper-button-next"></div>
+        <div class="swiper-button-prev"></div>
+      </div>
+    </section>
+
+    <!-- feature section ends -->
+
+    <!-- 41:59/1:08 newsletter section -->
+    <section class="newsletter">
+      <form action="">
+        <h3>subscribe for latest updates</h3>
+        <input
+          type="email"
+          name=""
+          placeholder="enter your email"
+          id=""
+          class="box"
+        />
+        <input type="submit" value="subscribe" class="btn" />
+      </form>
+    </section>
+
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <!-- js file links -->
+    <script src="./js/script.js"></script>
+    <script src="./js/search.js"></script>
+  </body>
+</html>
