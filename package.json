@@ -1,0 +1,16 @@
+{
+  "name": "bookstore",
+  "version": "1.0.0",
+  "description": "dynamic website, full stack",
+  "main": "index.js",
+  "scripts": {
+    "test": "node index.js or nodemon index.js"
+  },
+  "author": "ali Saremi",
+  "license": "ISC",
+  "devDependencies": {
+    "eslint": "^8.51.0",
+    "eslint-config-prettier": "^9.0.0",
+    "prettier": "^3.0.3"
+  }
+}
