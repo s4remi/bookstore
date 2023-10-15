@@ -1,5 +1,5 @@
 import { query } from "express";
-import { mongoClient } from "mongodb";
+import { MongoClient } from "mongodb";
 //import * as dotenv from "dotenv";
 //dotenv.config();
 
