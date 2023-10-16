@@ -5,7 +5,9 @@ import bodyParser from "body-parser";
 export const router = express.Router();
 
 router.get("/search", async (req, res) => {
-  const booksres = await myDB.getSearch();
+  const offset = parseInt(req.query.offset || 0, 10);
+  //const MaxElements = req.query.MaxElements || 20;
+  const booksres = await myDB.getSearch({ MaxElements: 20, offset });
   //console.log(booksres);
   res.send(booksres);
 });

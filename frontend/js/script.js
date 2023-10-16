@@ -2,7 +2,7 @@ const searchForm = document.querySelector(".search-form");
 document.querySelector("#search-btn").onclick = () => {
   searchForm.classList.toggle("active");
 };
-// //featured books section
+//featured books section
 const featuredBooks = document.querySelector("#featured-books-container");
 
 featuredBooks.addEventListener("click", async (event) => {
@@ -40,7 +40,7 @@ featuredBooks.addEventListener("click", async (event) => {
   }
 });
 
-document.getElementById("search-form").addEventListener("submit", (event)=> {
+document.getElementById(".search-form").addEventListener("submit", (event) => {
   event.preventDefault();
   const isbn = document.getElementById("search-box").value;
   window.location.href = `../book_detail.html?isbn=${isbn}`;

@@ -1,19 +1,17 @@
 import { query } from "express";
 import { MongoClient } from "mongodb";
-//import * as dotenv from "dotenv";
-//dotenv.config();
 
-//const client = process.env.Mongo_Url;
-const uri =
-  "Monmongodb+srv://admin:admin@cluster0.duh9gcc.mongodb.net/?retryWrites=true&w=majority";
-const DB_name = "books";
+import dotenv from "dotenv";
+dotenv.config();
 
-const MyD = () => {
+const connection_url = process.env.MONGO_URL;
+//const DB_name = "books";
+const MyDB = () => {
   const myDB = {};
-  const usersCollection = "users";
 
   const connect = () => {
-    const client = new MongoClient(uri);
+    const client = new MongoClient(connection_url);
+    console.log(`thi is a connection url: ${connection_url}`);
     const db = client.db("eCommer");
     return { client, db };
   };
@@ -38,13 +36,18 @@ const MyD = () => {
     }
   };
 
-  myDB.getSearch = async ({ query = {}, MaxElements = 20 } = {}) => {
+  myDB.getSearch = async ({ query = {}, MaxElements = 20, page = 1 } = {}) => {
     const { client, db } = connect();
     const bookCollection = db.collection("books");
-    //console.log("getSearch function", query);
 
     try {
-      return await bookCollection.find(query).limit(MaxElements).toArray();
+      const skip = (page - 1) * MaxElements;
+      console.log(`this is a skip value:${skip}`);
+      return await bookCollection
+        .find(query)
+        .skip(skip)
+        .limit(MaxElements)
+        .toArray();
     } finally {
       console.log("db closing connection");
       client.close();
@@ -68,4 +71,5 @@ const MyD = () => {
 
   return myDB;
 };
+
 export const myDB = MyDB();
