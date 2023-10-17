@@ -36,7 +36,9 @@ const MyDB = () => {
     }
   };
 
-  myDB.getSearch = async ({ query = {}, MaxElements = 20, page = 1 } = {}) => {
+  myDB.getSearch = async ({ query = {}, MaxElements = 20, offset } = {}) => {
+    let page = offset;
+    console.log("page in the mydb", offset);
     const { client, db } = connect();
     const bookCollection = db.collection("books");
 
@@ -68,6 +70,8 @@ const MyDB = () => {
       client.close();
     }
   };
+  //TODO list
+  //   myDB.postsubscriber = async();
 
   return myDB;
 };

@@ -41,7 +41,7 @@ function Booklist() {
     }
     const books = await res.json();
     //const jsonstring = JSON.stringify(books);
-    console.log(`this is the books after res.json\t${JSON.stringify(books)}`);
+    //console.log(`this is the books after res.json\t${JSON.stringify(books)}`);
 
     if (books.length === 0) {
       me.showMessage("No more books to load.");
@@ -50,7 +50,7 @@ function Booklist() {
     }
 
     // Render the new books and increment the current page.
-    me.renderPrompt(JSON.parse(books));
+    me.renderPrompt(books);
     currentPage++;
   };
 

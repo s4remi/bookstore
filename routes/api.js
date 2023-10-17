@@ -5,7 +5,8 @@ import bodyParser from "body-parser";
 export const router = express.Router();
 
 router.get("/search", async (req, res) => {
-  const offset = parseInt(req.query.offset || 0, 10);
+  console.log(req.query);
+  const offset = parseInt(req.query.page || 1, 10);
   //const MaxElements = req.query.MaxElements || 20;
   const booksres = await myDB.getSearch({ MaxElements: 20, offset });
   //console.log(booksres);
@@ -38,7 +39,12 @@ router.post("/users/login", bodyParser.json(), async (req, res) => {
         return res.status(500).json({ message: "Internal server error" });
       }
       if (result) {
-        return res.status(200).json({ message: "Login successful" });
+        return (
+          res
+            .status(200)
+            // add email : email for login
+            .json({ message: "Login successful", email: email })
+        );
       } else {
         return res.status(401).json({ message: "Wrong email or password" });
       }

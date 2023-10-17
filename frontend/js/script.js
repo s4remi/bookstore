@@ -40,11 +40,11 @@ featuredBooks.addEventListener("click", async (event) => {
   }
 });
 
-document.getElementById(".search-form").addEventListener("submit", (event) => {
-  event.preventDefault();
-  const isbn = document.getElementById("search-box").value;
-  window.location.href = `../book_detail.html?isbn=${isbn}`;
-});
+// document.getElementById("").addEventListener("submit", (event) => {
+//   event.preventDefault();
+//   const isbn = document.getElementById("search-box").value;
+//   window.location.href = `../book_detail.html?isbn=${isbn}`;
+// });
 
 //login section
 const loginForm = document.querySelector(".login-form-container");
@@ -65,6 +65,17 @@ loginForm.addEventListener("submit", async (event) => {
     })
       .then((response) => response.json())
       .then((data) => {
+        //TODO LIST go to the main page with the name of the use name inthe nav bar
+        if (data.message === "Login successful") {
+          // Redirect to the main page with the user's name in the nav bar
+          // Replace 'YOUR_MAIN_PAGE_URL' and 'username' with appropriate values
+          console.log(email);
+          //window.location.href = `index.html?username=${email}`;
+          console.log(email);
+        } else {
+          alert(data.message);
+        }
+
         alert(data.message);
       })
       .catch((error) => {
