@@ -34,7 +34,7 @@ function Booklist() {
     const res = await fetch(
       `/search?page=${currentPage}&MaxElements=${booksPerPage}`
     );
-    console.log(`this is the result in booklist.js${res}`);
+    console.log(`this is the result in me.handleLoadMoreClick \t${res}`);
     if (!res.ok) {
       me.showMessage("Error loading more books");
       return;

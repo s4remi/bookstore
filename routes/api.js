@@ -20,8 +20,7 @@ router.post("/searchByIsbn", bodyParser.json(), async (req, res) => {
 
   const bookInfo = await myDB.getBookByISBN({ query });
   console.log("inside of the searchByIsbn");
-  console.log(bookInfo);
-  //check
+  //console.log("the bookInfo from getBookByISBN ", bookInfo);
   if (bookInfo) {
     return res
       .status(200)
@@ -90,6 +89,8 @@ router.post("/users/register", bodyParser.json(), async (req, res) => {
 
 router.get("/searchByTitle", async (req, res) => {
   const title = req.query.title;
+  console.log("this is a title from searchByTitle ", title);
+  console.log("the is a request log\t", req);
   const maxResults = parseInt(req.query.maxResults) || 20;
   try {
     const books = await myDB.getBooksByTitle(title, maxResults);

@@ -1,5 +1,8 @@
+/*
+
+
 const searchTitleList = document.getElementById("searchTitleList");
-const goto_result = document.getElementById("goto_result");
+const goto_result = document.getElementById("gotoresult");
 let book_list = [];
 
 goto_result.addEventListener("keyup", (e) => {
@@ -24,8 +27,8 @@ const loadCharacters = async () => {
   }
 };
 
-const displayCharacters = (characters) => {
-  const htmlString = characters
+const displayCharacters = (book_list) => {
+  const htmlString = book_list
     .map((character) => {
       return `
             <li class="character">
@@ -40,3 +43,4 @@ const displayCharacters = (characters) => {
 };
 
 loadCharacters();
+*/

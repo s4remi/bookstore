@@ -28,10 +28,11 @@ featuredBooks.addEventListener("click", async (event) => {
       );
 
       if (response.ok) {
-        const data = await response.json();
+        const mongo_response = await response.json();
 
-        alert("you clicked and response is ok");
-        console.log("you clicked and response is ok");
+        //alert("you clicked and response is ok");
+        console.log("you clicked and response is ok ", mongo_response.data[0]);
+        // print the result
       } else {
         alert("Failed to fetch book information.");
         console.log("response.ok else");
