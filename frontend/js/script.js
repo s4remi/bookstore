@@ -219,3 +219,41 @@ var swiper = new Swiper(".featured-slider", {
     },
   },
 });
+
+// Book Details Container
+const bookDetailsContainer = document.querySelector(".book-details-container");
+const closeBookDetailsBtn = document.querySelector("#close-book-details-btn");
+const bookDetailImage = document.querySelector("#book-detail-image");
+const bookTitle = document.querySelector("#book-title");
+const bookPrice = document.querySelector("#book-price");
+const addToCartBtn = document.querySelector("#add-to-cart");
+
+// Click event for the fa-eye icon
+featuredBooks.addEventListener("click", async (event) => {
+  event.preventDefault();
+
+  if (event.target.classList.contains("fa-eye")) {
+    // Get the book details
+    const isbn = event.target.id;
+    // You would fetch book details based on the ISBN here and populate the container
+    // For this example, we'll populate with dummy data
+    const dummyBookData = {
+      title: "Book Title",
+      price: "$15.99",
+      imageUrl: "./images/book-1.png", // Update with the actual image URL
+    };
+
+    // Update the book details container with the data
+    bookDetailImage.src = dummyBookData.imageUrl;
+    bookTitle.textContent = dummyBookData.title;
+    bookPrice.textContent = "Price: " + dummyBookData.price;
+
+    // Display the book details container
+    bookDetailsContainer.style.display = "block";
+  }
+});
+
+// Close book details container
+closeBookDetailsBtn.addEventListener("click", () => {
+  bookDetailsContainer.style.display = "none";
+});
