@@ -100,4 +100,15 @@ router.get("/searchByTitle", async (req, res) => {
     res.status(500).json({ message: "Internal server error" });
   }
 });
+
+router.get("/books", async (req, res) => {
+  const { isbn } = req.query;
+  myDB.getBookByISBN({ ISBN: parseInt(isbn) }).then((book) => {
+    if (!book) {
+      return res.status(401).json({ message: "Couldn't find this book" });
+    } else {
+      return res.json(book);
+    }
+  });
+});
 export default router;

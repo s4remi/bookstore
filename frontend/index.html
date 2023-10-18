@@ -157,23 +157,54 @@
         </div>
         <div class="swiper books-slider">
           <div class="swiper-wrapper">
-            <a href="#" class="swiper-slide"
-              ><img src="./images/book-1.png" alt="book 2"
+            <a
+              id="9780142437230"
+              href="./isbn_info.html?isbn=9780142437230"
+              class="swiper-slide"
+              ><img
+                src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1546112331l/3836._SY475_.jpg"
+                alt="book 2"
             /></a>
-            <a href="#" class="swiper-slide"
-              ><img src="./images/book-2.png" alt="book 1"
+            <a
+              id="9780151009985"
+              href="./isbn_info.html?isbn=9780151009985"
+              class="swiper-slide"
+              ><img
+                src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1479336522l/14942._SY475_.jpg"
+                alt="book 1"
             /></a>
-            <a href="#" class="swiper-slide"
-              ><img src="./images/book-3.png" alt="book 3"
+            <a
+              id="9780439023511"
+              href="./isbn_info.html?isbn=9780439023511"
+              class="swiper-slide"
+              ><img
+                src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1586722918l/7260188.jpg"
+                alt="book 3"
             /></a>
-            <a href="#" class="swiper-slide"
-              ><img src="./images/book-4.png" alt="book 4"
+            <a
+              id="9780345410054"
+              href="./isbn_info.html?isbn=9780345410054"
+              class="swiper-slide"
+            >
+              ><img
+                src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1388184360l/122.jpg"
+                alt="book 4"
             /></a>
-            <a href="#" class="swiper-slide"
-              ><img src="./images/book-5.png" alt="book 5"
+            <a
+              id="9780393355956"
+              href="./isbn_info.html?isbn=9780393355956"
+              class="swiper-slide"
+              ><img
+                src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1508534066l/36236125.jpg"
+                alt="book 5"
             /></a>
-            <a href="#" class="swiper-slide"
-              ><img src="./images/book-6.png" alt="book 6"
+            <a
+              id="9780060638504"
+              href="./isbn_info.html?isbn=9780060638504"
+              class="swiper-slide"
+              ><img
+                src="https://i.gr-assets.com/images/S/compressed.photo.goodreads.com/books/1298438455l/92307.jpg"
+                alt="book 6"
             /></a>
           </div>
           <img src="images/stand.png" class="stand" alt="picture stand" />
@@ -229,9 +260,8 @@
               <a href="#" class="fas fa-search"></a>
               <a href="#" class="fas fa-heart"></a>
               <a
-                href="./isbn_info.html"
-                class="btn fa-eye"
-                id="9780062024039"
+                class="fas fa-eye book-details-trigger"
+                data-isbn="9780062024039"
               ></a>
             </div>
             <div class="image">
@@ -254,7 +284,7 @@
               <a href="#" class="fas fa-heart"></a>
               <a
                 id="9999999999999"
-                href="./book_detail.html?isbn=9999999999999"
+                href="./isbn_info.html?isbn=9999999999999"
                 class="fas fa-eye"
               ></a>
             </div>
@@ -274,7 +304,7 @@
               <a href="#" class="fas fa-heart"></a>
               <a
                 id="9780345538376"
-                href="./book_detail.html?isbn=9780345538376"
+                href="./isbn_info.html?isbn=9780345538376"
                 class="fas fa-eye"
               ></a>
             </div>
@@ -294,7 +324,7 @@
               <a href="#" class="fas fa-heart"></a>
               <a
                 id="9780439358071"
-                href="./book_detail.html?isbn=9780439358071"
+                href="./isbn_info.html?isbn=9780439358071"
                 class="fas fa-eye"
               ></a>
             </div>
@@ -313,9 +343,8 @@
               <a href="#" class="fas fa-search"></a>
               <a href="#" class="fas fa-heart"></a>
               <a
-                id="9780451526342"
-                href="./book_detail.html?isbn=9780451526342"
-                class="fas fa-eye"
+                class="fas fa-eye book-details-trigger"
+                data-isbn="9780451526342"
               ></a>
             </div>
             <div class="image">
@@ -333,9 +362,8 @@
               <a href="#" class="fas fa-search"></a>
               <a href="#" class="fas fa-heart"></a>
               <a
-                id="9780393978896"
-                href="./book_detail.html?isbn=9780393978896"
-                class="fas fa-eye"
+                data-isbn="9780393978896"
+                class="fas fa-eye book-details-trigger"
               ></a>
             </div>
             <div class="image">
@@ -354,6 +382,24 @@
     </section>
 
     <!-- feature section ends -->
+
+    <!--  Book Details Container start-->
+    <div class="book-details-container">
+      <div id="close-book-details-btn" class="fas fa-times"></div>
+      <div class="book-details-content">
+        <h3>Book Details</h3>
+        <div class="book-image">
+          <img id="book-detail-image" src="" alt="" />
+        </div>
+        <div class="book-info">
+          <h3 id="book-title">Book Title</h3>
+          <p id="book-author">Price: $10.00</p>
+          <a id="add-to-cart" class="btn">Add to Cart</a>
+        </div>
+      </div>
+    </div>
+
+    <!--  Book Details Container end-->
 
     <!--  newsletter section -->
     <section class="newsletter">
