@@ -71,18 +71,15 @@ loginForm.addEventListener("submit", async (event) => {
         //TODO LIST go to the main page with the name of the use name inthe nav bar
         if (data.message === "Login successful") {
           // Redirect to the main page with the user's name in the nav bar
-          // Replace 'YOUR_MAIN_PAGE_URL' and 'username' with appropriate values
+          const userEmailElement = document.getElementById("userEmail");
+          userEmailElement.textContent = "Welcome " + email;
           console.log(email);
-          //window.location.href = `index.html?username=${email}`;
-          console.log(email);
+
+          // Hide the login form
+          loginForm.classList.remove("active");
         } else {
           alert(data.message);
         }
-
-        alert(data.message);
-      })
-      .catch((error) => {
-        alert(error);
       });
   } catch (error) {
     alert(error);
