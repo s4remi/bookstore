@@ -42,7 +42,7 @@ router.post("/users/login", bodyParser.json(), async (req, res) => {
         return (
           res
             .status(200)
-            // add email : email for login
+            // add email : email
             .json({ message: "Login successful", email: email })
         );
       } else {
@@ -86,5 +86,17 @@ router.post("/users/register", bodyParser.json(), async (req, res) => {
       });
     }
   });
+});
+
+router.get("/searchByTitle", async (req, res) => {
+  const title = req.query.title;
+  const maxResults = parseInt(req.query.maxResults) || 20;
+  try {
+    const books = await myDB.getBooksByTitle(title, maxResults);
+    res.json(books);
+  } catch (error) {
+    console.error(error);
+    res.status(500).json({ message: "Internal server error" });
+  }
 });
 export default router;

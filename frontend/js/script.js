@@ -2,6 +2,9 @@ const searchForm = document.querySelector(".search-form");
 document.querySelector("#search-btn").onclick = () => {
   searchForm.classList.toggle("active");
 };
+//search in the header section
+// Add an event listener for the "Enter" key press in the search input
+
 //featured books section
 const featuredBooks = document.querySelector("#featured-books-container");
 

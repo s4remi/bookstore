@@ -38,10 +38,9 @@ const MyDB = () => {
 
   myDB.getSearch = async ({ query = {}, MaxElements = 20, offset } = {}) => {
     let page = offset;
-    console.log("page in the mydb", offset);
+    console.log("page in the Mydb", offset);
     const { client, db } = connect();
     const bookCollection = db.collection("books");
-
     try {
       const skip = (page - 1) * MaxElements;
       console.log(`this is a skip value:${skip}`);
@@ -70,7 +69,18 @@ const MyDB = () => {
       client.close();
     }
   };
-  //TODO list
+  //TOdo list
+  myDB.getBooksByTitle = async (title, maxResults = 20) => {
+    const { client, db } = connect();
+    const bookCollection = db.collection("books");
+    try {
+      const query = { title: { $regex: title, $options: "i" } };
+      return await bookCollection.find(query).limit(maxResults).toArray();
+    } finally {
+      client.close();
+    }
+  };
+
   //   myDB.postsubscriber = async();
 
   return myDB;
