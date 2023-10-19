@@ -116,20 +116,12 @@ section {
   font-size: 1.6rem;
   padding: 0 1.2rem;
   height: 100%;
-  width: 70%;
+  width: 100%;
   text-transform: none;
   color: var(--black);
 }
-.header .header-1 .search-form button {
-  flex: 0;
-  font-size: 1.6rem;
-  padding-right: 1.2rem;
-  height: 100%;
-  width: 30%;
-  color: var(--black);
-  cursor: pointer;
-}
-.header .header-1 .search-form button:hover {
+
+.header .header-1 button:hover {
   color: var(--green);
 }
 .header .header-1 .icons div,
@@ -143,10 +135,6 @@ section {
 .header .header-1 .icons a:hover {
   color: var(--green);
 }
-#search-btn {
-  display: none;
-}
-
 .header .header-2 {
   background-color: var(--green);
 }
@@ -187,7 +175,7 @@ body {
   left: 0;
   right: 0;
   z-index: 1000;
-  display: none;
+  display: flex;
 }
 .bottom-navbar a {
   font-size: 2.5rem;
@@ -604,11 +592,7 @@ body {
     z-index: 1000;
   }
   #search-btn {
-    display: inline-block;
-  }
-
-  #search-btn {
-    display: inline-block;
+    display: flex;
   }
   .header .header-1 {
     box-shadow: var(--box-shadow);

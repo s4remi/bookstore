@@ -1,71 +1,31 @@
 const searchForm = document.querySelector(".search-form");
-document.querySelector("#search-btn").onclick = () => {
+document.querySelector("#sreachbyisbn-btn").onclick = () => {
   searchForm.classList.toggle("active");
 };
 //search in the header section
 // Add an event listener for the "Enter" key press in the search input
-document.addEventListener("DOMContentLoaded", function () {
-  // Select the search button and the search form
-  const searchBtn = document.getElementById("search-btn");
-  const searchForm = document.querySelector(".header-1 .search-form");
+const userInput = document.getElementById("gotoresult");
+const searchButton = document.getElementById("sreachbyisbn-btn");
 
-  // Add a click event listener to the search button
-  searchBtn.addEventListener("click", function () {
-    // Toggle the 'active' class on the search form
-    searchForm.classList.toggle("active");
-  });
-});
-
-const gotoresult = document.querySelector("#gotoresult");
-gotoresult.addEventListener("keyup", async (event) => {
-  if (event.key === "Enter") {
-    alert("got the enter");
-    event.preventDefault();
-    const isbn = event.target.value;
-    console.log("in gotoresult.addEventListener", isbn);
-    if (isbn) {
-      // Call the function to fetch book details based on the entered ISBN
-      const bookByIsbn = await fetchBookByIsbn(isbn);
-
-      //display it
-      displayBookDetails(bookByIsbn);
-    }
+userInput.addEventListener("input", (event) => {
+  const userInputValue = userInput.value.replace(/\D/g, "");
+  userInput.value = userInputValue;
+  if (userInputValue.length === 13) {
+    searchButton.removeAttribute("disabled");
+  } else {
+    searchButton.setAttribute("disabled", true);
   }
 });
-
-// Function to fetch book details by ISBN
-async function fetchBookByIsbn(isbn) {
-  try {
-    const response = await fetch("/searchByIsbn", {
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify({
-        isbn: isbn,
-      }),
-    });
-    if (response.ok) {
-      const bookDetails = await response.json();
-      if (bookDetails.data) {
-        // Redirect to "isbn.html" and pass book details as a query parameter
-        const queryParams = new URLSearchParams();
-        queryParams.set("isbn", isbn);
-        queryParams.set("title", bookDetails.data.title);
-        // Add more details as needed
-
-        window.location.href = `isbn.html?${queryParams.toString()}`;
-      } else {
-        alert("Book not found");
-      }
-    } else {
-      alert("Failed to fetch book details");
-    }
-  } catch (error) {
-    console.error(error);
-    alert("Error fetching book details");
+// Function to handle the search button click
+searchButton.addEventListener("click", () => {
+  if (userInput.value.length === 13) {
+    const data_recorded = userInput.value;
+    localStorage.setItem("data_recorded", data_recorded);
+    console.log("searchbutton-addEventListener \t", data_recorded);
+    // Redirect to a new page (replace 'newpage.html' with the actual URL)
+    window.location.href = "search_result.html";
   }
-}
+});
 
 //login section
 const loginForm = document.querySelector(".login-form-container");
