@@ -570,6 +570,9 @@ body {
   section {
     padding: 3rem 2rem;
   }
+  .bottom-navbar {
+    display: none;
+  }
 }
 
 @media (max-width: 768px) {
