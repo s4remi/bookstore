@@ -88,6 +88,9 @@ const renderPrompt = function (bookData) {
     bookData.price["$numberDouble"]
   }</span></p><p><strong>Description:</strong> <span id="description">${
     bookData.description
+  }</span></p>
+  <p><strong>ISBN:</strong> <span id="description">${
+    bookData.ISBN
   }</span></p></div>`;
 };
 

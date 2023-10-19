@@ -53,5 +53,8 @@ const loadBook = (mongo_response) => {
   }</span></p>
   <p><strong>Description:</strong> <span id="description">${
     mongo_response.description
+  }</span></p>
+  <p><strong>ISBN:</strong> <span id="description">${
+    mongo_response.ISBN
   }</span></p></div>`;
 };

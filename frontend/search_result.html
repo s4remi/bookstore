@@ -3,23 +3,39 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Result</title>
-    <link rel="stylesheet" href="./css/search_result.css" />
+    <title>Book Information</title>
+    <link
+      rel="stylesheet"
+      href="https://unpkg.com/swiper@7/swiper-bundle.min.css"
+    />
+    <link rel="stylesheet" href="./css/booklist.css" />
   </head>
   <body>
-    <div class="container">
-      <h1>&#x2728;Book result &#x2728;</h1>
-      <div id="searchWrapper">
-        <input
-          type="text"
-          name="searchbar"
-          id="searchbar"
-          placeholder="search for a character"
-        />
+    <header class="header">
+      <div class="header-2">
+        <nav class="navbar">
+          <a href="./index.html">home</a>
+          <a href="#featured-books-container">feature</a>
+          <a href="/frontend/booklist.html">library</a>
+          <a href="#profile"><span id="userEmail">welcome </span></a>
+        </nav>
       </div>
-      <ul id="searchTitleList"></ul>
-    </div>
-    <script src="./js/search.js"></script>
+    </header>
+    <section class="book-section" id="book-section">
+      <div class="row">
+        <div class="col-lg-4 col-am-12">
+          <h2>Book's Name</h2>
+
+          <!-- menu -->
+          <div class="col-lg-8 col-sm-12">
+            <div id="prompts_isbn"></div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Add more books with the same structure -->
+    </section>
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="./js/search_result.js"></script>
   </body>
 </html>

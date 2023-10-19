@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;300;400;500;600&display=swap");
+@import url("https://fonts.googleapis.com/css?family=Poppins:wght@100;300;400;500;600&display=swap");
 :root {
   --green: #27ae60;
   --dark-color: #219150;
@@ -48,7 +48,7 @@ section {
   position: relative;
 }
 
-heading::before {
+.heading::before {
   content: "";
   position: absolute;
   top: 50%;
@@ -71,6 +71,7 @@ heading::before {
   margin-top: 1rem;
   display: inline-block;
   padding: 0.9rem 3rem;
+  border: var(--border);
   border-radius: 0.5rem;
   color: #fff;
   background: var(--green);
@@ -98,6 +99,8 @@ heading::before {
 }
 
 .header .header-1 .search-form {
+  display: flex;
+  align-items: center;
   width: 50rem;
   height: 5rem;
   border: var(--border);
@@ -109,20 +112,24 @@ heading::before {
 }
 
 .header .header-1 .search-form input {
+  flex: 1;
   font-size: 1.6rem;
   padding: 0 1.2rem;
   height: 100%;
-  width: 100%;
+  width: 70%;
   text-transform: none;
   color: var(--black);
 }
-.header .header-1 .search-form label {
-  font-size: 2.5rem;
-  padding-right: 1.5rem;
+.header .header-1 .search-form button {
+  flex: 0;
+  font-size: 1.6rem;
+  padding-right: 1.2rem;
+  height: 100%;
+  width: 30%;
   color: var(--black);
   cursor: pointer;
 }
-.header .header-1 .search-form label:hover {
+.header .header-1 .search-form button:hover {
   color: var(--green);
 }
 .header .header-1 .icons div,
@@ -408,7 +415,7 @@ body {
 }
 
 .icons-container .icons {
-  width: flex;
+  flex: 1;
   align-items: center;
   gap: 1.5rem;
   padding: 2rem 0;
@@ -588,7 +595,13 @@ body {
     display: none;
   }
   .bottom-navbar {
-    display: block;
+    text-align: center;
+    background: var(--green);
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 1000;
   }
   #search-btn {
     display: inline-block;

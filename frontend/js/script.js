@@ -4,51 +4,68 @@ document.querySelector("#search-btn").onclick = () => {
 };
 //search in the header section
 // Add an event listener for the "Enter" key press in the search input
+document.addEventListener("DOMContentLoaded", function () {
+  // Select the search button and the search form
+  const searchBtn = document.getElementById("search-btn");
+  const searchForm = document.querySelector(".header-1 .search-form");
 
-//featured books section
-// const featuredBooks = document.querySelector("#featured-books-container");
+  // Add a click event listener to the search button
+  searchBtn.addEventListener("click", function () {
+    // Toggle the 'active' class on the search form
+    searchForm.classList.toggle("active");
+  });
+});
 
-// featuredBooks.addEventListener("click", async (event) => {
-//   event.preventDefault();
-//   // Check if the click event occurred on an "a" element with the "fa-eye" class
-//   if (event.target.classList.contains("fa-eye")) {
-//     // Get the ISBN from the clicked element's id
-//     const isbn = event.target.id;
+const gotoresult = document.querySelector("#gotoresult");
+gotoresult.addEventListener("keyup", async (event) => {
+  if (event.key === "Enter") {
+    alert("got the enter");
+    event.preventDefault();
+    const isbn = event.target.value;
+    console.log("in gotoresult.addEventListener", isbn);
+    if (isbn) {
+      // Call the function to fetch book details based on the entered ISBN
+      const bookByIsbn = await fetchBookByIsbn(isbn);
 
-//     try {
-//       const response = await fetch("http://localhost:3000/searchByIsbn", {
-//         method: "POST",
-//         headers: {
-//           "Content-Type": "application/json",
-//         },
-//         body: JSON.stringify({ isbn: isbn }),
-//       });
-//       console.log(
-//         "from script.js sent fetch should see  you clicked and response is ok"
-//       );
+      //display it
+      displayBookDetails(bookByIsbn);
+    }
+  }
+});
 
-//       if (response.ok) {
-//         const mongo_response = await response.json();
+// Function to fetch book details by ISBN
+async function fetchBookByIsbn(isbn) {
+  try {
+    const response = await fetch("/searchByIsbn", {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify({
+        isbn: isbn,
+      }),
+    });
+    if (response.ok) {
+      const bookDetails = await response.json();
+      if (bookDetails.data) {
+        // Redirect to "isbn.html" and pass book details as a query parameter
+        const queryParams = new URLSearchParams();
+        queryParams.set("isbn", isbn);
+        queryParams.set("title", bookDetails.data.title);
+        // Add more details as needed
 
-//         //alert("you clicked and response is ok");
-//         console.log("you clicked and response is ok ", mongo_response.data[0]);
-//         // print the result
-//       } else {
-//         alert("Failed to fetch book information.");
-//         console.log("response.ok else");
-//       }
-//     } catch (error) {
-//       console.log("from script.js in catch error");
-//       alert(error);
-//     }
-//   }
-// });
-
-// document.getElementById("").addEventListener("submit", (event) => {
-//   event.preventDefault();
-//   const isbn = document.getElementById("search-box").value;
-//   window.location.href = `../book_detail.html?isbn=${isbn}`;
-// });
+        window.location.href = `isbn.html?${queryParams.toString()}`;
+      } else {
+        alert("Book not found");
+      }
+    } else {
+      alert("Failed to fetch book details");
+    }
+  } catch (error) {
+    console.error(error);
+    alert("Error fetching book details");
+  }
+}
 
 //login section
 const loginForm = document.querySelector(".login-form-container");
@@ -220,7 +237,7 @@ var swiper = new Swiper(".featured-slider", {
   },
 });
 
-// Book Details Container
+// Book Details Container for featured books section
 
 // Select all elements with the "book-details-trigger" class
 const bookDetailsTriggers = document.querySelectorAll(".book-details-trigger");
@@ -278,6 +295,8 @@ function displayBookDetails(bookDetails) {
     <h3>${bookDetails.title}</h3>
     <p>Author: ${bookDetails.author}</p>
     <p>Price: ${bookDetails.price}</p>
+    <p>ISBN: ${bookDetails.ISBN}</p>
+    
     <!-- Add more details as needed -->
   `;
 
@@ -293,74 +312,3 @@ closeBookDetailsBtn.addEventListener("click", () => {
   );
   bookDetailsContainer.style.display = "none";
 });
-
-/*
-const featuredBooks = document.querySelector(".featured-books-container");
-const bookDetailsContainer = document.querySelector(".book-details-container");
-const closeBookDetailsBtn = document.querySelector("#close-book-details-btn");
-const bookDetailImage = document.querySelector("#book-detail-image");
-const bookTitle = document.querySelector("#book-title");
-const bookAuthor = document.querySelector("#book-author");
-const addToCartBtn = document.querySelector("#add-to-cart");
-// Select all elements with the "book-details-trigger" class
-const bookDetailsTriggers = document.querySelectorAll(".book-details-trigger");
-
-// Click event for the fa-eye icon
-featuredBooks.addEventListener("click", async (event) => {
-  event.preventDefault();
-
-  if (event.target.classList.contains("fa-eye")) {
-    // Get the book details
-    const isbn = event.target.id;
-    console.log("fa-eye icon eventlistener", isbn);
-    // fetch book details based on the ISBN here and populate the container
-    try {
-      const response = await fetch("http://localhost:3000/searchByIsbn", {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-        },
-        body: JSON.stringify({ isbn: isbn }),
-      });
-      console.log("in script.js", body);
-
-      if (response.ok) {
-        const mongo_response = await response.json();
-
-        //alert("you clicked and response is ok");
-        console.log("you clicked and response is ok ", mongo_response.data[0]);
-        // print the result
-      } else {
-        alert("Failed to fetch book information.");
-        console.log("response not ok, else");
-      }
-    } catch (error) {
-      console.log("from script.js in catch error");
-      alert(error);
-    }
-
-    // Update the book details container with the data
-    bookDetailImage.src = mongo_response.image;
-    bookTitle.textContent = mongo_response.title;
-    bookPrice.textContent = "Price: " + dummyBookData.price;
-
-    bookDetailsContent.innerHTML = `
-      <h3>${bookDetails.title}</h3>
-      <p>Author: ${bookDetails.author}</p>
-      <p>Price: ${bookDetails.price}</p>
-      <!-- Add more details as needed -->
-    `;
-
-    // Display the book details container
-    bookDetailsContainer.style.display = "block";
-  }
-});
-
-// Close book details container
-closeBookDetailsBtn.addEventListener("click", () => {
-  const bookDetailsContainer = document.querySelector(
-    ".book-details-container"
-  );
-  bookDetailsContainer.style.display = "none";
-});
-*/
