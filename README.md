@@ -50,6 +50,7 @@ The `booklist.html` file is an HTML template for displaying a list of books. It 
 The `styles.css` file contains the CSS styles used in the project. It defines various styles for elements like headers, buttons, forms, icons, and more. It also uses custom properties for colors and layout.
 
 ### Key Objective
+
 #Create a Web Application: The primary objective of this project is to create a web application that provides various features and functionalities to users.
 
 #Search Books: The project aims to allow users to search for books using different criteria such as ISBN and title. This search functionality provides users with easy access to book information.
@@ -60,9 +61,9 @@ The `styles.css` file contains the CSS styles used in the project. It defines va
 #Data Storage and Retrieval: Data is stored and retrieved from the MongoDB database, and it should be done securely and efficiently.
 #Responsive Design: The frontend should have a responsive design to ensure a seamless experience on various devices and screen sizes.
 
-
 To run the project, make sure you have Node.js installed. You can start the server by running the following command after being the project folder:
 
 ```bash
 npm install
+nodemon index.js
 ```
