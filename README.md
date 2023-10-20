@@ -6,6 +6,8 @@ e-commers_website with Express, Node, MongoDB, js,html,css
 
 Ali, Zhehao
 
+### Description:
+
 This is a full-stack dynamic website project that provides various features related to books, user registration, and more. The project includes several components, such as the server-side code, HTML templates, and CSS styles.
 
 ## Design Document:
