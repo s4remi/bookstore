@@ -57,9 +57,28 @@ The `styles.css` file contains the CSS styles used in the project. It defines va
 #Display Book Information: Once a user searches for a book or views book details, the project should display comprehensive information about the book, including title, author, rating, language, genres, pages, publisher, price, and more.
 #Pagination: The project includes pagination for search results, allowing users to navigate through multiple pages of book listings.
 
-#Database Integration: The project integrates with a MongoDB database for storing and retrieving user and book data. This includes user registration, login, and book information.
+## Database Integration: The project integrates with a MongoDB database for storing and retrieving user and book data. This includes user registration, login, and book information.
+
 #Data Storage and Retrieval: Data is stored and retrieved from the MongoDB database, and it should be done securely and efficiently.
 #Responsive Design: The frontend should have a responsive design to ensure a seamless experience on various devices and screen sizes.
+
+## Screenshots:
+
+![sample1](./frontend/images/presentation/p2-1.png)
+![sample2](./frontend/images/presentation/p2-2.png)
+![sample3](./frontend/images/presentation/p2-3.png)
+![sample4](./frontend/images/presentation/p2-4.png)
+![sample5](./frontend/images/presentation/p2-5.png)
+![sample6](./frontend/images/presentation/p2-6.png)
+![sample7](./frontend/images/presentation/p2-7.png)
+![sample8](./frontend/images/presentation/p2-8.png)
+![sample9](./frontend/images/presentation/p2-9.png)
+
+## Design Document:
+
+![sample10](./frontend/images/mockup.jpeg)
+
+## Run the project:
 
 To run the project, make sure you have Node.js installed. You can start the server by running the following command after being the project folder:
 
