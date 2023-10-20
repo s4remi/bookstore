@@ -12,6 +12,53 @@ This is a full-stack dynamic website project that provides various features rela
 
 ![sample10](./frontend/images/mockup.jpeg)
 
+## Project Description:
+
+Title: Online Bookstore Web Application
+
+### Description:
+
+Create an online bookstore web application that allows users to search for books by ISBN, view book details, and purchase books. The application also includes user authentication for account creation and login. Users can browse a collection of featured books, access book details, and make informed purchasing decisions.
+
+## User Personas:
+
+    ### Book Enthusiast - Sarah
+        Age: 30
+        Occupation: English Teacher
+        Goals: Sarah loves reading books, especially classic literature. She wants a convenient way to search for and explore new and classic books online. She values detailed information about the books she's interested in.
+
+    ### Student - Alex
+        Age: 22
+        Occupation: College Student
+        Goals: Alex is a student who often needs to find textbooks for his courses. He's looking for an easy way to search for and purchase textbooks using their ISBN. He prefers quick and simple navigation.
+
+    ### Frequent Shopper - Emily
+        Age: 40
+        Occupation: Marketing Manager
+        Goals: Emily is an avid reader and frequently shops for books online. She seeks a user-friendly and secure platform where she can create an account, save her preferences, and enjoy a seamless shopping experience.
+
+### User Stories:
+
+    As a Book Enthusiast (Sarah), I want to search for a specific book by its ISBN so that I can find and explore classic literature easily.
+        Scenario: Sarah visits the website, enters the ISBN of a classic book, and clicks the search button.
+        Outcome: The system displays the book details, including the title, author, description, and cover image.
+
+    As a Student (Alex), I want to quickly find and purchase textbooks by entering their ISBN.
+        Scenario: Alex visits the website, enters the ISBN of his required textbook, and clicks the search button.
+        Outcome: The system presents a list of matching textbooks, and Alex can choose the one he needs and proceed to purchase it.
+
+    As a Frequent Shopper (Emily), I want to create an account and log in to access personalized features and make secure purchases.
+        Scenario: Emily visits the website and clicks on the "Log In" button.
+        Outcome: She's prompted to enter her email and password. After successfully logging in, Emily can access her account, view her purchase history, and update her personal information.
+
+    As a User (Any Persona), I want to explore a collection of featured books.
+        Scenario: A user visits the homepage and scrolls through a selection of featured books.
+        Outcome: The user can click on a book to view its details or add it to their cart for purchase.
+
+    As a User (Any Persona), I want to view detailed information about a book, including its author, price, and description.
+        Scenario: A user clicks on a book from the search results or the featured books section.
+        Outcome: The system displays a detailed page for the book, providing information on the author, price, description, and other relevant details.
+
 ## Project Components
 
 ### `MyDB.js`
