@@ -6,13 +6,11 @@ e-commers_website with Express, Node, MongoDB, js,html,css
 
 Ali, Zhehao
 
-## Deploy link:
-
-https://e-commerce-o08r.onrender.com
-
-# E-commers-website
-
 This is a full-stack dynamic website project that provides various features related to books, user registration, and more. The project includes several components, such as the server-side code, HTML templates, and CSS styles.
+
+## Design Document:
+
+![sample10](./frontend/images/mockup.jpeg)
 
 ## Project Components
 
@@ -53,14 +51,23 @@ The `styles.css` file contains the CSS styles used in the project. It defines va
 
 #Create a Web Application: The primary objective of this project is to create a web application that provides various features and functionalities to users.
 
-#Search Books: The project aims to allow users to search for books using different criteria such as ISBN and title. This search functionality provides users with easy access to book information.
+## Search Books:
+
+The project aims to allow users to search for books using different criteria such as ISBN and title. This search functionality provides users with easy access to book information.
 #Display Book Information: Once a user searches for a book or views book details, the project should display comprehensive information about the book, including title, author, rating, language, genres, pages, publisher, price, and more.
 #Pagination: The project includes pagination for search results, allowing users to navigate through multiple pages of book listings.
 
-## Database Integration: The project integrates with a MongoDB database for storing and retrieving user and book data. This includes user registration, login, and book information.
+## Database Integration:
 
-#Data Storage and Retrieval: Data is stored and retrieved from the MongoDB database, and it should be done securely and efficiently.
-#Responsive Design: The frontend should have a responsive design to ensure a seamless experience on various devices and screen sizes.
+The project integrates with a MongoDB database for storing and retrieving user and book data. This includes user registration, login, and book information.
+
+## Data Storage and Retrieval:
+
+Data is stored and retrieved from the MongoDB database, and it should be done securely and efficiently.
+
+## Responsive Design:
+
+The frontend should have a responsive design to ensure a seamless experience on various devices and screen sizes.
 
 ## Screenshots:
 
@@ -73,10 +80,6 @@ The `styles.css` file contains the CSS styles used in the project. It defines va
 ![sample7](./frontend/images/presentation/p2-7.png)
 ![sample8](./frontend/images/presentation/p2-8.png)
 ![sample9](./frontend/images/presentation/p2-9.png)
-
-## Design Document:
-
-![sample10](./frontend/images/mockup.jpeg)
 
 ## Run the project:
 
